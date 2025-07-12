@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Booking Confirmation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f6f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .email-wrapper {
+            max-width: 650px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+        }
+
+        .email-header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .email-body {
+            padding: 30px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .main-heading {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .event-details {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .qr-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .qr-image img {
+            width: 200px;
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .event-id {
+            font-size: 20px;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-wrapper">
+        <div class="email-header">
+            🎟️ Booking Confirmed!
+        </div>
+
+        <div class="email-body">
+            <p class="greeting">Hello <b>
+                    <%= userName %>
+                </b>,</p>
+
+            <h2 class="main-heading">🎉 You're invited to the event!</h2>
+            <h2 class="main-heading">Title : <%= title %>
+            </h2>
+            <p class="event-id">Event Pass ID: <%= _id %>
+            </p>
+
+            <div class="event-details">
+                <p>
+                    The event is taking place in <b>
+                        <%= location %>
+                    </b> on
+                    <b>
+                        <%= modifiedDate %>
+                    </b>.
+                </p>
+                <p>Please be present on time and carry this email or show the QR code below at the entrance.</p>
+            </div>
+
+            <div class="qr-image">
+                <img src="https://res.cloudinary.com/dxcdipzsj/image/upload/v1751386621/Events/ynnhvsv87snivsqpxs3e.png"
+                    alt="QR Ticket" />
+            </div>
+
+            <p class="event-details">Thank you for booking! We’re excited to see you there. 🎈</p>
+        </div>
+
+        <div class="footer">
+            — Team VEl Events<br />
+            Need help? <a href="mailto:support@velapp.com">Contact Support</a>
+        </div>
+    </div>
+</body>
+
+</html>
